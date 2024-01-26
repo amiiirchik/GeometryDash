@@ -8,6 +8,8 @@
 /[Aa]ssets/Plugins/Editor/JetBrains*
 
 .vs/
+.vscode/
+.utmp/
 .vsconfig
 
 .gradle/

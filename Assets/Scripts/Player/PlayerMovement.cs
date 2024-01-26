@@ -19,8 +19,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position += Vector3.right * _speed;
-
-        //Debug.Log(_isGrounded);
     }
 
     public void Jump(InputAction.CallbackContext ctx)

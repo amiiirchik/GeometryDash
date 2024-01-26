@@ -4,8 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeathHandler : MonoBehaviour
 {
+    [SerializeField] private float timeBeforeRestart;
+
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private GameObject deathEffect;
     private AudioSource levelMusic;
+
 
     private GameObject player;
 
@@ -31,7 +35,8 @@ public class PlayerDeathHandler : MonoBehaviour
         AudioSource.PlayClipAtPoint(deathSound, player.transform.position);
         
         player.SetActive(false);
-        yield return new WaitForSeconds(.8f);
+        Instantiate(deathEffect, player.transform.position, player.transform.rotation);
+        yield return new WaitForSeconds(timeBeforeRestart);
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
