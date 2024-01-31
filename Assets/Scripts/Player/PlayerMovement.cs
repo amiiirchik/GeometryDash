@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,8 +24,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext ctx)
     {
-        if (_isGrounded) _rb.velocity = Vector2.up * _jumpForce;
+        if (_isGrounded)
+        {
+            _rb.velocity = Vector2.up * _jumpForce;
+        }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
