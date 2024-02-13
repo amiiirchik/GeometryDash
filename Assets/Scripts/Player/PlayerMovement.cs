@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _jumpForce = 12f;
 
     [SerializeField] private PlayerDeathHandler deathHandler;
+    [SerializeField] private PlayerEffectHandler EffectHandler;
 
     private Rigidbody2D _rb;
     private bool _isGrounded;
@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
         if (_isGrounded)
         {
             _rb.velocity = Vector2.up * _jumpForce;
+
+            EffectHandler.PlayJumpEffect();
         }
     }
 

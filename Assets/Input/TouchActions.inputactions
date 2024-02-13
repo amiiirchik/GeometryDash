@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "TouchLongPress",
+                    "type": "Button",
+                    "id": "6bf9b2cb-1a41-4b25-aee6-78cc833ae79e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -44,6 +53,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "047aec56-f97a-4040-ab7d-179397e8406a",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Hold(duration=0.4)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchLongPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
